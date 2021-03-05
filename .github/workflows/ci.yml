@@ -21,4 +21,4 @@ jobs:
         with:
           token: ${{ secrets.DO_TOKEN }}
       - name: Update domain record
-        run: doctl compute domain records update ${{ secrets.DO_DOMAIN_ROOT }} --record-id ${{ secrets.DO_DOMAIN_RECORD_ID }} --record-data dnslink=/ipfs/${{ steps.upload.outputs.hash }}
+        run: doctl compute domain records update ${{ secrets.DO_DOMAIN_ROOT }} --record-id ${{ secrets.DO_DOMAIN_RECORD_ID }} --record-ttl 300 --record-data dnslink=/ipfs/${{ steps.upload.outputs.hash }}
