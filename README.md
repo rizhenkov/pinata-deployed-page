@@ -19,9 +19,9 @@ What action do:
 2. Add your domain to [this form] to get free SSL
 
 ## Secrets for repository
-`PINATA_KEY`
-`PINATA_SECRET`
-`PINATA_PIN_NAME` any string
-`DO_TOKEN` token to digitalocean
-`DO_DOMAIN_ROOT` your domain 2nd level name (even if you are using 3rd)
-`DO_DOMAIN_RECORD_ID` id of TXT record which contains ipfs hash (you can find this by using `doctl compute domain records list DOMAIN_NAME`)
+`PINATA_KEY`  
+`PINATA_SECRET`  
+`PINATA_PIN_NAME` any string  
+`DO_TOKEN` token to digitalocean  
+`DO_DOMAIN_ROOT` your domain 2nd level name (even if you are using 3rd)  
+`DO_DOMAIN_RECORD_ID` id of TXT record which contains ipfs hash (you can find this by using `doctl compute domain records list DOMAIN_NAME`)  
