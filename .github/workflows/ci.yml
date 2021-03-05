@@ -15,3 +15,9 @@ jobs:
           pinataKey: ${{ secrets.PINATA_KEY }}
           pinataSecret: ${{ secrets.PINATA_SECRET }}
           pinataPinName: ${{ secrets.PINATA_PIN_NAME }}
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_TOKEN }}
+      - name: Update domain record
+        run: doctl compute domain records update ${{ secrets.DO_DOMAIN_ROOT }} --record-id ${{ secrets.DO_DOMAIN_RECORD_ID }} --record-data dnslink=/ipfs/${{ steps.upload.outputs.hash }}
