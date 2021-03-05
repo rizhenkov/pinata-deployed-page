@@ -8,11 +8,10 @@ jobs:
     runs-on: [ubuntu-18.04]
     steps:
       - uses: actions/checkout@v1
-      - name: Push to server
-        uses: appleboy/ssh-action@master
+      - name: Push to IPFS
+        uses: aquiladev/ipfs-action@v0.1.5
         with:
-          host: ${{ secrets.SERVER_IP }}
-          port: ${{ secrets.SERVER_PORT }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          script: cd ${{ secrets.PROJECT_PATH }} && git pull
+          path: ./docs
+          pinataKey: ${{ secrets.PINATA_KEY }}
+          pinataSecret: ${{ secrets.PINATA_SECRET }}
+          pinataPinName: ${{ secrets.PINATA_PIN_NAME }}
